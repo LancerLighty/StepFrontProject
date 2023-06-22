@@ -1,0 +1,12 @@
+button{
+    width: 200px;
+    padding: 7px 20px;
+    background-color: rgb(91, 168, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 1000px;
+    margin: 5px;
+}

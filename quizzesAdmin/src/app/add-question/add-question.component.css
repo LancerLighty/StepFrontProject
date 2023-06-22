@@ -1,0 +1,108 @@
+.addq{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 810px;
+}
+.wid100{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* width: 100%; */
+    padding: 10px;
+}
+.all{
+    width: 100%;
+    text-align: center;
+}
+li{
+    display: flex;
+    flex-wrap: wrap;
+}
+input, .create{
+    border-radius: 3px;
+    margin: 0px !important;
+}
+.create{
+    display: block;
+    border: none;
+    background-color: rgb(18, 203, 77);
+    color: white;
+    width: 100%;
+    padding: 3px;
+}
+input{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 220px;
+    border: 1px solid gray;
+}
+input:focus{
+    outline: 1.5px solid blueviolet;
+}
+#answers{
+    min-width:220px;
+    max-width: 270px;
+}
+.inblock{
+    display: inline-block;
+}
+.plus, .delete{
+    border: none;
+    display: inline-block;
+    color: white;
+}
+.plus{
+    background-color: rgb(73, 127, 255);
+}
+.delete{
+    background-color: rgb(255, 54, 54);
+}
+.addq label, button{
+    display: block;
+}
+.cards, .addq{
+    background-color: rgba(255, 255, 255, 0.814);
+    border-radius: 5px;
+}
+.cardd{
+    max-width: 400px;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: black;
+}
+.cards{
+    width: 500px;
+    padding: 20px;
+}
+.del{
+    border: none;
+    background-color: rgba(255, 37, 37, 0.71);
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-size: 15px;
+    color: white;
+}
+h2{
+    color: white; 
+    width: 100%; 
+    text-align: center;
+}
+.error{
+    color: red;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+    padding: 0px;
+    margin-top: 20px !important;
+}

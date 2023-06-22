@@ -1,0 +1,21 @@
+.center{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.welcomeimg{
+    width: 100%;
+}
+.background{
+    background-color: rgba(255, 255, 255, 0.921);
+    max-width: 800px;
+    border-radius: 5px;
+}
+.padding{
+    padding: 20px;
+    padding-bottom: 40px;
+}
+h3{
+    margin: 40px 20px;
+}

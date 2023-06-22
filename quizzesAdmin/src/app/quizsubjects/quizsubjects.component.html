@@ -1,0 +1,15 @@
+<div class="main">
+    <div class="addquizz">
+        <h3>add quizzes</h3>
+        <p>create new quizz:</p>
+        <hr>
+        <div class="padding">
+            <label for="">Enter Quizz name:</label>
+            <input [(ngModel)]="myQuiz.subjectName" type="text" placeholder="Enter Name">
+            <button class="create" (click)="addQuiz()">create</button>
+        </div>
+    </div>
+    <div class="subjects">
+        <app-sub-card *ngFor="let i of arr" [subject]="i"></app-sub-card>
+    </div>
+</div>

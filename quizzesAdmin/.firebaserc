@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "quizzes-65b96": {
+      "hosting": {
+        "quizzes": [
+          "quizzes-65b96"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "quizzes-65b96"
+  }
+}

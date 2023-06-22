@@ -1,0 +1,79 @@
+app-logo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 25px;
+}
+.nav{
+    height: 50px;
+    display: flex;
+    box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.756);
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.192);
+    color: white;
+    padding: 0px 15px;
+    margin-bottom: 50px;
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(5px);
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    text-shadow: 2px 2px 4px black;
+    list-style-type: none;
+    margin: 3px 10px;
+    height: 45px;
+    transform: translateY(25%);
+    cursor: pointer;
+}
+li:hover .desc{
+    opacity: 0.9;
+    height: 65px;
+    margin-top: 10px;
+    
+}
+li:hover hr{
+    width: 100%;
+}
+.hrpos{
+    display: flex;
+    justify-content: center;
+}
+.desc{
+    margin-top: -10px;
+    opacity: 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px 5px rgba(135, 179, 255, 0.378);
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    width: 140px;
+    margin-left: -20px;
+    height: 0px;
+    transition: 0.5s;
+    overflow: hidden;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+hr{
+    margin: 0px;
+    margin-top: 5px;
+    border: none;
+    border-top: 4px solid rgb(0, 191, 255);
+    width: 0px;
+    transition: 0.5s;
+}
+p{
+    color: black;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 0px;
+    margin: 0px;
+    text-shadow: none;
+}

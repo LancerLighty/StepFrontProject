@@ -1,0 +1,22 @@
+<div class="pos">
+    <div class="background">
+        <h2>Sign Up</h2>
+        <p>create new account!</p>
+        <hr>
+        <div class="signup">
+            <label for="">Enter Username:</label>
+            <input class="form-control" [(ngModel)]="newUser.username" type="text" placeholder="Username">
+            <label for="">Enter Email:</label>
+            <div class="input-group mb-3">
+                <input [(ngModel)]="newUser.email" type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+              </div>
+            <label for="">Enter Password:</label>
+            <input class="form-control" [(ngModel)]="newUser.password" type="text" placeholder="Password">
+            <label for="">Repeat Password:</label>
+            <input class="form-control" [(ngModel)]="repeatPass" type="text" placeholder="Repeat Password">
+            <p class="error">{{error}}</p>
+            <button (click)="signUp()">Sign Up</button>
+        </div>
+    </div>
+</div>

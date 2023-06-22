@@ -1,0 +1,52 @@
+<div class="main">
+    <div class="wid100">
+        <h2>Add question</h2>
+        <div class="addq">
+            <div class="il">
+                <label for="">Enter question:</label>
+                <input [(ngModel)] = "myQuestion.quest"  type="text" placeholder="question">
+            </div>
+            <div id="answers" class="il">
+                <label>add Answers</label>
+                <!-- <input [(ngModel)]="myAnswer1.answer" type="text" placeholder="answer1"  >
+                <input [(ngModel)]="myAnswer2.answer" type="text" placeholder="answer2" >
+                <input [(ngModel)]="myAnswer3.answer" type="text" placeholder="answer3" > -->
+                <form [formGroup]="answersForm">
+                    <div class="inblock" formArrayName="answers">
+                      <div class="inblock" *ngFor="let i of getAnswers().controls; let ansIndex = index">
+                        <div class="inblock" [formGroupName]="ansIndex">
+                          <div class="inblock">
+                            <input type="text" formControlName="answerr">
+                          </div>
+                          <button (click)="deleteAns(ansIndex)" class="delete">X</button>
+                        </div>
+                      </div>
+                      <button (click)="addNewAns()" class="plus">+</button>
+                    </div>
+                  </form>
+            </div>
+            <div class="il">
+                <label for="">Enter correct answer:</label>
+                <input [(ngModel)] = "myQuestion.correctAnswer" type="text" placeholder="Correct index">
+            </div>
+            <p class="error">{{error}}</p>
+            <button class="create" (click)="addQuestion()">add question</button>
+        </div>
+    </div>
+    <div class="all">
+        <h2 style="color: white; display: block;">All questions</h2>
+    </div>
+    <div class="cards">
+        <p>questions count: {{newArr.length}}</p>
+        <hr>
+        <div *ngFor="let i of newArr; let index = index" class="cardd">
+            <h5>{{i.quest}}</h5>
+                <p *ngFor="let i of i.answers">
+                {{i.answer}}
+                </p>
+                <p> correctAnswer: {{i.correctAnswer}}</p>
+            <button class="del" (click)="delete(index)">delete question</button>
+            <hr>
+        </div>
+    </div>
+</div>

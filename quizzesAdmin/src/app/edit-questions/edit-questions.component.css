@@ -1,0 +1,10 @@
+.main{
+    min-height: 100vh;
+    background-image: url("../../assets/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    background-attachment: fixed;
+    padding: 20px;
+}

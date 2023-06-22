@@ -1,0 +1,10 @@
+button{
+    display: inline-block;
+    min-width: 120px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: royalblue;
+    color: white;
+    margin: 5px;
+}

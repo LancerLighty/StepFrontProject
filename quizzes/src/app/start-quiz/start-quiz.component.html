@@ -1,0 +1,17 @@
+<div class="pos">
+    <div class="background">
+        <p>questions:{{questindex}}/{{questions.length}}</p>
+        <h3>{{question.quest}}</h3>
+        <hr>
+        <label class="full-width-button" for="answer1"><input [(ngModel)]="choice" type="radio" id="answer1" name="answer" value="{{question.answers[0].answer}}">
+            {{question.answers[0].answer}}
+        </label><br>
+        <label class="full-width-button" for="answer2"><input [(ngModel)]="choice" type="radio" id="answer2" name="answer" value="{{question.answers[1].answer}}">
+            {{question.answers[1].answer}}
+        </label><br>
+        <label class="full-width-button" for="answer3"><input [(ngModel)]="choice" type="radio" id="answer3" name="answer" value="{{question.answers[2].answer}}">
+            {{question.answers[2].answer}}
+        </label><br>
+        <button (click)="nextQuestion()">Next</button>
+    </div>
+</div>

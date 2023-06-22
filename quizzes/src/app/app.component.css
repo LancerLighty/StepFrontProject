@@ -1,0 +1,19 @@
+.main{
+    background-image: url("../assets/peakpx1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto 150%;
+    min-height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+.router{
+    margin-top: 50px;
+    width: 100%;
+}
+.nav{
+    justify-self: flex-start;
+    align-self: flex-start;
+}
