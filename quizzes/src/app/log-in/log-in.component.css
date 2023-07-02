@@ -1,0 +1,55 @@
+.password-container {
+    position: relative;
+    display: flex;
+    width: auto;
+    justify-content: flex-start;
+    background-color: rgb(114, 154, 255);
+
+}
+
+.password-toggle {
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.pos{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background{
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 340px;
+    padding: 20px 0px;
+}
+.error{
+    font-size: 15px;
+    color: red;
+}
+span{
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    padding: 20px 30px;
+}
+label{
+    display: block;
+    text-align: left;
+}
+input{
+    width: 100%;
+}
+button{
+    width: 100%;
+    color: white;
+    border: none;
+    background-color: royalblue;
+    border-radius: 5px;
+    padding: 5px;
+}

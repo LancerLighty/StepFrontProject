@@ -4,8 +4,8 @@
         <h6>QuizCode</h6>
     </div>
     <h5 class="paragraph">test your knowledge in coding!</h5>
-    <div class="buttons">
-        <button class="SignUp" routerLink="/SignUp">Sign Up</button>
-        <button class="Login" routerLink="/LogIn">Login</button>
+    <div *ngIf="showButtons" class="buttons">
+        <button class="SignUp" routerLink="/signup">Sign Up</button>
+        <button class="Login" routerLink="/login">Login</button>
     </div>
 </div>

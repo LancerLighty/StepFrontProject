@@ -18,10 +18,22 @@
 }
 .subjects{
     width: 500px;
-    min-height: 300px;
     padding: 20px;
+    height: calc(100vh - 300px);
+    overflow-y: auto;
+    
 }
-
+input{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 220px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-bottom: 3px !important;
+}
+input:focus{
+    outline: 1.5px solid blueviolet;
+}
 .padding{
     padding: 20px;
 }
@@ -49,5 +61,4 @@ input, .create{
 }
 input{
     margin-top: 5px;
-    margin-bottom: 15px;
 }

@@ -18,6 +18,9 @@ import { StartQuizComponent } from './start-quiz/start-quiz.component';
 import { EndQuizComponent } from './end-quiz/end-quiz.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { SuccesfullsuComponent } from './succesfullsu/succesfullsu.component';
+import { ErrorpageComponent } from './authguard/errorpage/errorpage.component';
+import { FavouritesComponent } from './favourites/favourites.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,9 @@ import { LogInComponent } from './log-in/log-in.component';
     EndQuizComponent,
     SignUpComponent,
     LogInComponent,
+    SuccesfullsuComponent,
+    ErrorpageComponent,
+    FavouritesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<div class="main">
+    <div class="login">
+        <h1>LogIn</h1>
+        <p>log In to have access to Admin Panel</p>
+        <hr>
+        <div class="pad">
+            <label for="">Username:</label>
+            <input type="text" [(ngModel)]="logInInfo.username">
+            <label for="">Password:</label>
+            <input type="password" [(ngModel)]="logInInfo.password">
+            <p class="error">{{error}}</p>
+            <button (click)="logIn()">LogIn</button>
+        </div>
+    </div>
+</div>

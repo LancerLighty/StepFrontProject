@@ -17,12 +17,11 @@ export class StartQuizComponent implements OnInit {
   questions:Questions[] = [];
   question:Questions = new Questions;
   questindex:number = 0
-  choice:string = ""
+  choice1!:number
   count:number = 0
   ngOnInit(): void {
     this.actroute.params.subscribe((par:Params)=> {
       this.subjectinfo = par
-      console.log(this.subjectinfo)
       this.info.getQuiz().subscribe((data:any) => {
         this.arr = data.docs.map((x: any) => {
           const dt = x.data();
@@ -30,17 +29,16 @@ export class StartQuizComponent implements OnInit {
           return dt;
         });
         this.newArr = this.arr.filter(i=> i.subjectName == this.subjectinfo.subjectname)[0].questions
-        console.log(this.newArr)
+
         this.questions = this.info.ranQuestions(this.newArr) as any
-        console.log(this.questions)
+
         this.question = this.questions[this.questindex]
       })
     })
 
   }
   nextQuestion(){
-    console.log(this.choice)
-    if(this.question.correctAnswer == this.choice){
+    if((this.question.correctAnswer as unknown as number) == this.choice1){
       this.count++
     }
     if(this.questindex == 19){
@@ -48,10 +46,11 @@ export class StartQuizComponent implements OnInit {
     }
     this.questindex++
     this.question = this.questions[this.questindex]
-    console.log(this.count)
-    const radioButtons = document.querySelectorAll('input[name="answer"]');
+    this.choice1 = Math.max();
+    const radioButtons = document.querySelectorAll('input[name="radioGroup"]');
     radioButtons.forEach((radioButton) => {
       (radioButton as HTMLInputElement).checked = false;
     });
+  
   }
 }

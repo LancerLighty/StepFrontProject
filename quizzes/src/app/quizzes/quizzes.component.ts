@@ -8,7 +8,7 @@ import { InfoService } from '../info/info.service';
   styleUrls: ['./quizzes.component.css']
 })
 export class QuizzesComponent implements OnInit {
-
+  loading: boolean = true;
   constructor(private info: InfoService, private fs:AngularFirestore) {}
   arr:any[] = []
   ngOnInit(): void {
@@ -18,7 +18,7 @@ export class QuizzesComponent implements OnInit {
         dt.id = x.id;
         return dt;
       });
-      console.log(this.arr)
+        this.loading = false;
     })
     
   }

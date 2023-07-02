@@ -13,6 +13,7 @@ import { EditQuestionsComponent } from './edit-questions/edit-questions.componen
 import { SubCardComponent } from './sub-card/sub-card.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EditQuestionsComponent,
     SubCardComponent,
     AddQuestionComponent,
+    LoginComponent,
     
   ],
   imports: [

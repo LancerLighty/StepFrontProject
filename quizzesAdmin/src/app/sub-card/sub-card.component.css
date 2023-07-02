@@ -1,10 +1,28 @@
-button{
-    display: inline-block;
-    min-width: 120px;
+.all{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     padding: 10px;
     border: none;
     border-radius: 10px;
     background-color: royalblue;
     color: white;
     margin: 5px;
+}
+.quizz{
+    width:100%
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+div:hover{
+    background-color: rgb(61, 95, 197);
+}
+button{
+    border: none;
+    font-weight: 700;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
 }

@@ -4,7 +4,10 @@
             <h1>Quizzes:</h1>
         </div>
         <div class="quizbuttons">
-            <app-quiz-card *ngFor="let i of arr" [quiz]="i"></app-quiz-card>
-        </div>
+            <div class="loading" *ngIf="arr.length === 0">
+              <img src="https://cdn.pixabay.com/animation/2022/10/11/03/16/03-16-39-160_512.gif" alt="Loading">
+            </div>
+            <app-quiz-card style="width: 100%;" *ngFor="let i of arr" [quiz]="i"></app-quiz-card>
+          </div>
     </div>
 </div>

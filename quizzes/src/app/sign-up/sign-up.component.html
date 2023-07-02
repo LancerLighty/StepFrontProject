@@ -1,5 +1,5 @@
 <div class="pos">
-    <div class="background">
+    <div class="mb-5" class="background">
         <h2>Sign Up</h2>
         <p>create new account!</p>
         <hr>
@@ -7,15 +7,22 @@
             <label for="">Enter Username:</label>
             <input class="form-control" [(ngModel)]="newUser.username" type="text" placeholder="Username">
             <label for="">Enter Email:</label>
-            <div class="input-group mb-3">
+            <div class="input-group">
                 <input [(ngModel)]="newUser.email" type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span class="input-group-text" id="basic-addon2">@gmail.com</span>
               </div>
             <label for="">Enter Password:</label>
-            <input class="form-control" [(ngModel)]="newUser.password" type="text" placeholder="Password">
-            <label for="">Repeat Password:</label>
-            <input class="form-control" [(ngModel)]="repeatPass" type="text" placeholder="Repeat Password">
+            <div class="password-container">
+                <input [(ngModel)]="newUser.password" class="form-control ml" type="{{type}}" id="password-input" placeholder="Password">
+                <span (click)="togglePasswordVisibility()" class="password-toggle blue" id="password-toggle">👁️</span>
+            </div>
+            <label style="margin-top: 5px;" for="">Repeat Password:</label>
+            <div class="password-container">
+                <input [(ngModel)]="repeatPass" class="form-control ml" type="{{type}}" id="password-input" placeholder="Password">
+                <span (click)="togglePasswordVisibility()" class="password-toggle blue" id="password-toggle">👁️</span>
+            </div>
             <p class="error">{{error}}</p>
+            <p>Already have an account? <a href="/login" routerLink="/login">LogIn</a></p>
             <button (click)="signUp()">Sign Up</button>
         </div>
     </div>

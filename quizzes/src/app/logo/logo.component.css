@@ -16,3 +16,8 @@ h1{
     width: 90px;
     border-right: 1px solid rgba(0, 0, 0, 0.314);
 }
+@media screen and (max-width: 500px) {
+    .name{
+        width: 75px;
+    }
+}

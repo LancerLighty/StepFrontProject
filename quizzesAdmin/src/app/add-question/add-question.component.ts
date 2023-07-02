@@ -16,6 +16,7 @@ export class AddQuestionComponent implements OnInit {
   @Input()
   subid:any = {};
   answersForm!:FormGroup
+  newArr1: any;
   constructor (private dtshr:InfoService, private fb:FormBuilder) { 
     this.answersForm = this.fb.group({
       answers:this.fb.array([])
@@ -47,13 +48,14 @@ export class AddQuestionComponent implements OnInit {
         dt.id = x.id;
         return dt;
       });
-      this.newArr = this.arr.filter(i=> i.subjectName == this.subid.codename)[0].questions
-      console.log(this.newArr)
+      this.newArr1 = this.arr.filter(i=> i.subjectName == this.subid.codename)[0]
+      this.newArr = this.newArr1.questions
     })
     
   }
   delete(index:number){
-    this.dtshr.deleteQuestion(this.subid,index)
+    this.newArr1.questions.splice(index, 1)
+    this.dtshr.deleteQuestion(this.newArr1.id,this.newArr1)
   }
   error:string = ""
   checkanswers(){
@@ -68,29 +70,27 @@ export class AddQuestionComponent implements OnInit {
   }
   addQuestion(){
     const answers = this.answersForm.get('answers') as FormArray;
-    console.log(this.myQuestion.correctAnswer)
     if(this.getAnswers().controls.length < 2){
       this.error = "enter et least 2 answers"
-    } else if (this.myQuestion.quest == "" || this.myQuestion.correctAnswer == -1 || this.myQuestion.correctAnswer < answers.length || this.checkanswers()){
+    } else if (this.myQuestion.quest == "" || this.checkanswers()){
       this.error = "fill all inputs"
     } else {
-      this.myQuestion.correctAnswer =  this.myQuestion.correctAnswer - 1 
+      this.myQuestion.correctAnswer =  this.myQuestion.correctAnswer - 1
       this.error = ""
       this.myQuestion.subjectId =this.subid.codeid
-      let currentSubject = this.arr.filter(i=> i.id == this.myQuestion.subjectId)[0]
-      let crsbj = Object.assign({}, currentSubject)
-      let randId = Math.random()*9999999999999
       for (let i = 0; i < answers.length; i++) {
         const answer = answers.at(i) as FormGroup;
         this.myQuestion.answers.push(answer.get('answerr')?.value);
       }
+      let currentSubject = this.arr.filter(i=> i.id == this.myQuestion.subjectId)[0]
+      let crsbj = Object.assign({}, currentSubject)
+      let randId = Math.random()*9999999999999
+
       let myqs = Object.assign({},this.myQuestion)
       myqs.id = randId
       currentSubject.questions.push(myqs)
       this.myQuestion = new Questions()
-      console.log(myqs)
-      console.log(crsbj)
-      // this.dtshr.updateQuiz(crsbj.id,crsbj)
+      this.dtshr.updateQuiz(crsbj.id,crsbj)
     }
   }
 }

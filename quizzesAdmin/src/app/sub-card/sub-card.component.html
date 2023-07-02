@@ -1,2 +1,3 @@
-
-    <button routerLink="/questions/{{subject.subjectName}}/{{subject.id}}">{{subject.subjectName}}</button>
+<div *ngIf="del" class="all">
+<div class="quizz" routerLink="/questions/{{subject.subjectName}}/{{subject.id}}"><a href="/questions/{{subject.subjectName}}/{{subject.id}}">{{subject.subjectName}}</a></div>
+<button class="delete" (click)="delete()">X</button></div>

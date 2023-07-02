@@ -14,7 +14,6 @@ export class EndQuizComponent implements OnInit {
   ngOnInit(): void {
     this.actroute.params.subscribe((par:Params)=> {
       this.resultInfo = par
-      console.log(this.resultInfo)
     })
   }
   quizzes(){

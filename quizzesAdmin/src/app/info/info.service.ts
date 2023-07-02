@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore} from '@angular/fire/compat/firestore';
+// import {AngularFirestore} from '@angular/fire/compat/firestore';
+import { AngularFirestore, DocumentSnapshot, DocumentData } from '@angular/fire/compat/firestore';
 // import firebase from "firebase/app";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import { from, switchMap } from 'rxjs';
 import { Questions } from '../questions.model';
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +30,8 @@ export class InfoService {
   updateQuiz(id:any,newQuizz:any){
      return this.db.collection("quizzes").doc(id).update(newQuizz)
   }
-  deleteQuestion(id: any, questionIndex: number) {
-    this.getQuiz()
+  deleteQuestion(id:any, newArr:any) {
+    this.deleteQuiz(id)
+    this.addQuiz(newArr)
   }
 }

@@ -33,7 +33,7 @@
             <button class="create" (click)="addQuestion()">add question</button>
         </div>
     </div>
-    <div class="all">
+    <div class="mt2" class="all">
         <h2 style="color: white; display: block;">All questions</h2>
     </div>
     <div class="cards">
@@ -41,10 +41,10 @@
         <hr>
         <div *ngFor="let i of newArr; let index = index" class="cardd">
             <h5>{{i.quest}}</h5>
-                <p *ngFor="let i of i.answers">
-                {{i.answer}}
+                <p *ngFor="let y of i.answers">
+                {{y}}
                 </p>
-                <p> correctAnswer: {{i.correctAnswer}}</p>
+                <p> correctAnswer: {{i.correctAnswer + 1}}</p>
             <button class="del" (click)="delete(index)">delete question</button>
             <hr>
         </div>

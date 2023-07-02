@@ -1,5 +1,7 @@
 button{
-    width: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     padding: 7px 20px;
     background-color: rgb(91, 168, 255);
     color: white;
@@ -10,3 +12,14 @@ button{
     font-weight: 1000px;
     margin: 5px;
 }
+span{
+    font-size: 20px;
+    padding: 2px 7px;
+}
+.highlight-yellow {
+    color: yellow;
+  }
+  
+  .highlight-white {
+    color: white;
+  }

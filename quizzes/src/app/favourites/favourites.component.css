@@ -1,0 +1,35 @@
+.pos{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 0px 25px;
+}
+.quizzes{
+    width: 800px;
+    /* max-width: 300px; */
+    background-color: rgba(255, 255, 255, 0.952);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.quizbuttons{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+  }
+  
+  .loading img {
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+  }

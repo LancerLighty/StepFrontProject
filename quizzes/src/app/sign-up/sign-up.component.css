@@ -45,3 +45,25 @@ button{
     color: red;
     font-size: 12px;
 }
+.password-container {
+    height: 31px;
+    position: relative;
+    display: flex;
+    width: auto;
+    justify-content: flex-start;
+
+}
+.blue{
+    background-color: rgb(114, 154, 255);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.password-toggle {
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.ml{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}

@@ -16,7 +16,6 @@ export class EditQuestionsComponent implements OnInit {
   ngOnInit(): void {
     this.actroute.params.subscribe((par:Params)=> {
       this.subjectid = par
-      console.log(this.subjectid)
     })
 
   }

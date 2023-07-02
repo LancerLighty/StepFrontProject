@@ -7,8 +7,7 @@
     padding: 0px 25px;
 }
 .quizzes{
-    min-width: 300px;
-    max-width: 880px;
+    max-width: 1000px;
     /* max-width: 300px; */
     background-color: rgba(255, 255, 255, 0.952);
     border-radius: 10px;
@@ -19,5 +18,17 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* width: 100%; */
+    width: 100%;
 }
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+  }
+  
+  .loading img {
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+  }

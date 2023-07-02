@@ -3,5 +3,5 @@ export class Questions{
     subjectId:string = ""
     quest:string=""
     answers:any[] = []
-    correctAnswer:number = -1
+    correctAnswer!:number
 }

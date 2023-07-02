@@ -6,10 +6,11 @@
         <div class="padding">
             <label for="">Enter Quizz name:</label>
             <input [(ngModel)]="myQuiz.subjectName" type="text" placeholder="Enter Name">
+            <p style="color: red; font-weight: 600;" class="mb-2">{{error}}</p>
             <button class="create" (click)="addQuiz()">create</button>
         </div>
     </div>
-    <div class="subjects">
+    <div class="subjects mt-5">
         <app-sub-card *ngFor="let i of arr" [subject]="i"></app-sub-card>
     </div>
 </div>

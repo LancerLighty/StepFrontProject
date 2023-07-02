@@ -1,1 +1,19 @@
-<p>log-in works!</p>
+<div class="pos">
+    <div class="mb-5" class="background">
+        <h1>LogIn</h1>
+        <p>Log In to your Account</p>
+        <hr>
+        <div class="login">
+            <label for="">Username or Email:</label>
+            <input [(ngModel)]="userinfo.usernEmail" type="text" placeholder="Username/Email">
+            <label class="mt-2" for="">Password:</label>
+            <div class="password-container">
+                <input [(ngModel)]="userinfo.password" type="{{type}}" id="password-input" placeholder="Password">
+                <span (click)="togglePasswordVisibility()" class="password-toggle" id="password-toggle">👁️</span>
+            </div>
+            <p class="error">{{error}}</p>
+            <p>Don't have an Account?<a href="/signup" routerLink="/signup">SignUp</a></p>
+            <button (click)="LogIn()">LogIn</button>
+        </div>
+    </div>
+</div>

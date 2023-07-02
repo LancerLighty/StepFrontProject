@@ -1,1 +1,1 @@
-<button routerLink="/quizzes/{{quiz.subjectName}}/{{quiz.id}}">{{quiz.subjectName}}</button>
+<button><span style="width: 100%;" routerLink="/quizzes/{{quiz.subjectName}}/{{quiz.id}}">{{quiz.subjectName}}</span> <span [class.highlight-yellow]="isYellowColor" [class.highlight-white]="!isYellowColor" (click)="fav()">★</span></button>

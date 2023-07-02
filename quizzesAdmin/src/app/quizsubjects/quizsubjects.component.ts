@@ -11,6 +11,7 @@ export class QuizsubjectsComponent implements OnInit {
 
   constructor(private dtshr:InfoService){}
   arr:any[] = []
+  error:string= ""
   myQuiz:Quizzes = new Quizzes();
   ngOnInit(): void {
     this.dtshr.getQuiz().subscribe((data:any) => {
@@ -22,15 +23,18 @@ export class QuizsubjectsComponent implements OnInit {
       // this.jsArr = this.arr.filter(i=> i.subjectName == "js")[0].questions
       // console.log(this.jsArr)
     })
-    
   }
   addQuiz(){
-    let quizzObj = Object.assign({},this.myQuiz)
-    this.dtshr.addQuiz(quizzObj).then((data: any) => {
-      quizzObj.id = data.id;
-      this.arr.push(quizzObj);
-      //this.dtshr.updateCar(quizzObj.id,quizzObj)
-      console.log(this.arr);
-    });
+    if(this.myQuiz.subjectName != ""){
+      this.error = "Added Succesfully"
+      let quizzObj = Object.assign({},this.myQuiz)
+      this.dtshr.addQuiz(quizzObj).then((data: any) => {
+        quizzObj.id = data.id;
+        this.arr.push(quizzObj);
+      });
+      this.myQuiz = new Quizzes();
+    } else {
+      this.error = "Enter Quiz Name!"
+    }
   }
 }
