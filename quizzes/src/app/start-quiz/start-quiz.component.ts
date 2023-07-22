@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class StartQuizComponent implements OnInit {
   newArr: any;
-
+  correct: string[] = []
   constructor(private actroute:ActivatedRoute, private info:InfoService,private router: Router) { }
   subjectinfo:any = {}
   arr:any[] =[]
@@ -38,19 +38,28 @@ export class StartQuizComponent implements OnInit {
 
   }
   nextQuestion(){
+    console.log(this.questindex)
+    console.log(this.questions)
+    console.log(this.subjectinfo)
     if((this.question.correctAnswer as unknown as number) == this.choice1){
       this.count++
+      this.correct.push(this.question.subjectId)
     }
     if(this.questindex == 19){
-      this.router.navigate([`/quizzes/${this.subjectinfo.subjectname}/finished/${this.count}`]);
+      this.router.navigate([`/quizzes/results`], {
+        queryParams: {
+          correctCount: this.count,
+          totalQuestions: this.questions.length
+        }
+      });
+    } else {
+      this.questindex++
+      this.question = this.questions[this.questindex]
+      this.choice1 = Math.max();
+      const radioButtons = document.querySelectorAll('input[name="radioGroup"]');
+      radioButtons.forEach((radioButton) => {
+        (radioButton as HTMLInputElement).checked = false;
+      });
     }
-    this.questindex++
-    this.question = this.questions[this.questindex]
-    this.choice1 = Math.max();
-    const radioButtons = document.querySelectorAll('input[name="radioGroup"]');
-    radioButtons.forEach((radioButton) => {
-      (radioButton as HTMLInputElement).checked = false;
-    });
-  
   }
 }

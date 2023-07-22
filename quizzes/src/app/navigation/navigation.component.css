@@ -127,19 +127,16 @@ p{
 }
 @media screen and (max-width: 500px) {
     ul{
-        width: auto;
+        /* width: auto; */
         height: 100%;
-        display: flex;
-        align-items: center;
+        /* display: flex;
+        align-items: center; */
     }
     ul{
         margin-left: -20px;
     }
     app-logo{
         margin-left: -10px;
-    }
-    .main{
-        width: 100%
     }
     .desc{
         display: none;

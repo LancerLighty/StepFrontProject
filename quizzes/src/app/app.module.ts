@@ -21,6 +21,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SuccesfullsuComponent } from './succesfullsu/succesfullsu.component';
 import { ErrorpageComponent } from './authguard/errorpage/errorpage.component';
 import { FavouritesComponent } from './favourites/favourites.component';
+import { ResultsComponent } from './results/results.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
     SuccesfullsuComponent,
     ErrorpageComponent,
     FavouritesComponent,
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,

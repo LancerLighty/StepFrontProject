@@ -7,6 +7,7 @@ import { EndQuizComponent } from './end-quiz/end-quiz.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
+import { ResultsComponent } from './results/results.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StartQuizComponent } from './start-quiz/start-quiz.component';
 import { SuccesfullsuComponent } from './succesfullsu/succesfullsu.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:"quizzes", component:QuizzesComponent},
   {path:"quizzes/:subjectname/:id", component:StartQuizComponent},
   {path:"quizzes/:subjectname/finished/:count", component:EndQuizComponent},
+  {path:"quizzes/results", component:ResultsComponent},
   {path:"signup", component:SignUpComponent, canActivate: [AuthguarderService]},
   {path:"login", component:LogInComponent, canActivate: [AuthguarderService] },
   {path:"signup/succesfull", component:SuccesfullsuComponent, canActivate: [AuthguarderService] },

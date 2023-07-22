@@ -30,7 +30,7 @@ export class QuizCardComponent implements OnInit {
   
   fav(){
     if(!localStorage.getItem("qlogin")){
-      this.isYellowColor = true
+      this.isYellowColor = false
       alert("you need to log in to add to favourites!")
     } else {
       if(!this.isYellowColor){
