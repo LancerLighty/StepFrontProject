@@ -19,7 +19,9 @@ export class AuthService {
   }
   addUser(user:User){
     user = Object.assign({}, user)
-    user.email += "@gmail.com"
+    if(user.email.indexOf("@gmail.com") == -1){
+      user.email += "@gmail.com"
+    }
     // const userObject = user['toObject']()
     user.id = this.fs.createId();
     return this.fs.collection('/users').add(user), this.router.navigate(['/signup/succesfull']);;
@@ -55,5 +57,8 @@ export class AuthService {
       localStorage.removeItem("qlogin");
     }, expirationMs);
     this.router.navigate([`/quizzes`]);
+  }
+  deletelocal(){
+    localStorage.removeItem("qlogin")
   }
 }

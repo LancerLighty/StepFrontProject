@@ -1,1 +1,19 @@
-<p>results works!</p>
+<div class="pos">
+    <div class="background">
+        <h3>you succesfully finished {{resultInfo.subjectname}} Quiz!!</h3>
+        <hr>
+        <h6 style="margin-bottom: 30px;">you scored: {{resultInfo.count}}/20</h6>
+        <div class="quest" *ngFor="let i of quest; let qindex = index">
+            <h3>{{i.quest}}</h3>
+            <hr>
+            <div *ngFor="let y of i.answers; let index = index" class="answers">
+                
+                <label [ngClass]="{'green' : index == i.correctAnswer, 'red' : answer[qindex] != i.correctAnswer && answer[qindex] == index}" class="full-width-button" [for]="'radio-' + index">
+                <input type="radio"  [value]="index">
+                {{y}}
+                </label>
+            </div>
+        </div>
+        <button (click)="quizzes()">other quizzes</button>
+    </div>
+</div>

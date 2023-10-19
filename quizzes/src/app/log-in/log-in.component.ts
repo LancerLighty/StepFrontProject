@@ -37,6 +37,7 @@ export class LogInComponent implements OnInit {
         if ((this.checkEmail() && i.email == this.userinfo.usernEmail) ||
             (!this.checkEmail() && i.username == this.userinfo.usernEmail)) {
           this.userfire = i;
+          console.log(i)
           check = true;
           break;
         }

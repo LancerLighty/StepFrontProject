@@ -29,7 +29,7 @@ const routes: Routes = [
   {path:"quizzes", component:QuizzesComponent},
   {path:"quizzes/:subjectname/:id", component:StartQuizComponent},
   {path:"quizzes/:subjectname/finished/:count", component:EndQuizComponent},
-  {path:"quizzes/results", component:ResultsComponent},
+  {path:"result/:count", component:ResultsComponent},
   {path:"signup", component:SignUpComponent, canActivate: [AuthguarderService]},
   {path:"login", component:LogInComponent, canActivate: [AuthguarderService] },
   {path:"signup/succesfull", component:SuccesfullsuComponent, canActivate: [AuthguarderService] },

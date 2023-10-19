@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Route, Router } from '@angular/router';
+import { AuthService } from '../authentication/auth.service';
 import { InfoService } from '../info/info.service';
+import { Questions } from '../questions.model';
+import { ResultService } from '../resultsave/result.service';
 
 @Component({
   selector: 'app-results',
@@ -8,28 +11,25 @@ import { InfoService } from '../info/info.service';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  arr: any;
-  newArr:any;
-  constructor(private actroute:ActivatedRoute, private info:InfoService,private router: Router, private route:Route) { }
-  resultInfo:any = {}
-  correctCount: number = 0;
-  totalQuestions: number = 0;
-
+  quest:any[] = []
+  answer:number[] = []
+  resultInfo: any;
+  usersarr:any = []
+  i!:any
+  constructor(private actroute:ActivatedRoute, private info:InfoService,private router: Router, private result:ResultService, private auth:AuthService) { }
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params: Params) => {
-      this.correctCount = params['correctCount'];
-      this.totalQuestions = params['totalQuestions'];
-      this.info.getQuiz().subscribe((data:any) => {
-        this.arr = data.docs.map((x: any) => {
-          const dt = x.data();
-          dt.id = x.id;
-          return dt;
-        })
-        // this.newArr = this.arr.filter((i: { subjectName: any; })=> i.subjectName == this.arr.subjectname)[0].questions
-        // for(let i of this.arr){
-        // }
-      })
+    this.actroute.params.subscribe((par:Params)=> {
+      this.resultInfo = par
     })
+    if(this.result.questions[0] == null){
+      this.router.navigate(["/quizzes"])
+    }
+    this.quest = this.result.questions
+    this.answer = this.result.chosen
+    if(this.auth.isLoggedIn()){
+      var userlocal = localStorage.getItem("qlogin")|| "" ;
+      var user = JSON.parse(userlocal).id
+    }
   }
   quizzes(){
     this.router.navigate([`/quizzes`]);
